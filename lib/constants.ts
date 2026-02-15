@@ -126,6 +126,7 @@ export const SIDEBAR_MENU = [
     items: [
       { label: "Beranda", icon: "Home", href: "/beranda" },
       { label: "Analitik & Prioritas", icon: "TrendingUp", href: "/analitik" },
+      { label: "Aduan ", icon: "TrendingUp", href: "/aduan" },
       { label: "Laporan & Rekomendasi", icon: "BarChart3", href: "/laporan" },
     ],
   },
