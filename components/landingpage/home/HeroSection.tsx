@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center text-center px-6 overflow-hidden bg-gradient-to-b from-[#0B1120] via-[#0F1E3A] to-[#0B1120] pt-20 md:pt-24">
+    <section className="relative min-h-screen flex flex-col items-center text-center px-6 overflow-hidden bg-gradient-to-b from-[#0B1120] via-[#023E8A] to-[#0B1120] pt-20 md:pt-24">
 
       
       {/* Background Blur */}

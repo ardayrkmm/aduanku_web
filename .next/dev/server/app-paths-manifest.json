@@ -1,7 +1,4 @@
 {
-  "/(dashboard)/admin/beranda/page": "app/(dashboard)/admin/beranda/page.js",
-  "/(dashboard)/dashboard/beranda/page": "app/(dashboard)/dashboard/beranda/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/admin/beranda/page": "app/admin/beranda/page.js",
   "/page": "app/page.js"
 }
