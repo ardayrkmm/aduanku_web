@@ -1,19 +1,21 @@
-import Sidebar from "@/components/dashboard/Sidebar";
-import Header from "@/components/dashboard/Header";
-import DashboardContent from "@/components/dashboard/Dashboard";
+import Navbar from '@/components/landingpage/home/Navbar';
+import HeroSection from '@/components/landingpage/home/HeroSection';
+import FeaturesSection from '@/components/landingpage/home/FeaturesSection';
+import StatsSection from '@/components/landingpage/home/StatsSection';
+import CTASection from '@/components/landingpage/home/CTASection';
+import GuideSection from '@/components/landingpage/home/GuideSection';
+import Footer from '@/components/landingpage/home/Footer';
 
 export default function LandingPage() {
   return (
-    <div className="h-screen w-full flex overflow-hidden bg-[#F5F6FA]">
-      <Sidebar />
-
-      <div className="flex-1 flex flex-col">
-        <Header />
-
-        <main className="flex-1 overflow-y-auto p-6">
-          <DashboardContent />
-        </main>
-      </div>
-    </div>
+    <main className="overflow-hidden">
+      <Navbar />
+      <HeroSection />
+      <FeaturesSection />
+      <StatsSection />
+      <CTASection />
+      <GuideSection />
+      <Footer />
+    </main>
   );
 }
