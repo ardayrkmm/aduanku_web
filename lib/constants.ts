@@ -133,18 +133,18 @@ export const SIDEBAR_MENU = [
   {
     section: "Pages",
     items: [
-      { label: "Inbox", icon: "Mail", href: "/inbox" },
-      { label: "Calendar", icon: "Calendar", href: "/calendar" },
-      { label: "To-Do", icon: "CheckSquare", href: "/todo" },
-      { label: "Team", icon: "Users", href: "/team" },
-      { label: "Contact", icon: "Users", href: "/contact" },
-      { label: "Invoice", icon: "FileText", href: "/invoice" },
+      { label: "Inbox", icon: "Mail", href: "/admin/inbox" },
+      { label: "Calendar", icon: "Calendar", href: "/admin/calendar" },
+      { label: "To-Do", icon: "CheckSquare", href: "/admin/todo" },
+      { label: "Team", icon: "Users", href: "/admin/team" },
+      { label: "Contact", icon: "Users", href: "/admin/contact" },
+      { label: "Invoice", icon: "FileText", href: "/admin/invoice" },
     ],
   },
   {
     section: "Account",
     items: [
-      { label: "Settings", icon: "Settings", href: "/settings" },
+      { label: "Settings", icon: "Settings", href: "/admin/settings" },
       { label: "Logout", icon: "LogOut", href: "/logout" },
     ],
   },
