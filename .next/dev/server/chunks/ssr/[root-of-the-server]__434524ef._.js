@@ -156,20 +156,17 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$imag
 ;
 function HeroSection() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "relative min-h-screen flex flex-col items-center text-center px-6 overflow-hidden bg-gradient-to-b from-[#0B1120] via-[#023E8A] to-[#0B1120] pt-20 md:pt-24",
+        className: "relative min-h-screen flex flex-col items-center text-center px-6 overflow-hidden pt-20 md:pt-24",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600 opacity-20 rounded-full blur-[150px]"
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                src: "/svg/Desktop.svg",
+                alt: "Hero Background",
+                fill: true,
+                priority: true,
+                className: "object-cover -z-10"
             }, void 0, false, {
                 fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                lineNumber: 11,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-800 opacity-20 rounded-full blur-[150px]"
-            }, void 0, false, {
-                fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                lineNumber: 12,
+                lineNumber: 10,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -181,14 +178,14 @@ function HeroSection() {
                             "Satu Aduanmu",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                 fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                                lineNumber: 19,
+                                lineNumber: 23,
                                 columnNumber: 11
                             }, this),
                             "Merubah Sudut Kota"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                        lineNumber: 17,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -196,7 +193,7 @@ function HeroSection() {
                         children: "Sampaikan aspirasi, keluhan, dan laporan Anda secara cepat, transparan, dan terintegrasi langsung dengan pemerintah Kota Tegal."
                     }, void 0, false, {
                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                        lineNumber: 24,
+                        lineNumber: 28,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -206,7 +203,7 @@ function HeroSection() {
                             children: [
                                 "Lapor Sekarang!",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "w-8 h-8 flex items-center justify-center bg-blue-600 rounded-full",
+                                    className: "w-8 h-8 flex items-center justify-center bg-[#023E8A] rounded-full",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                         className: "w-4 h-4 text-white",
                                         fill: "none",
@@ -219,60 +216,60 @@ function HeroSection() {
                                             d: "M9 5l7 7-7 7"
                                         }, void 0, false, {
                                             fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                                            lineNumber: 41,
+                                            lineNumber: 45,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                                        lineNumber: 34,
+                                        lineNumber: 38,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                                    lineNumber: 33,
+                                    lineNumber: 37,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                            lineNumber: 31,
+                            lineNumber: 35,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                        lineNumber: 30,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                lineNumber: 14,
+                lineNumber: 18,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mt-10 w-100 aspect-square relative",
+                className: "mt-10 w-[400px] aspect-square relative z-10",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                         src: "/svg/phone.svg",
                         alt: "Phone Preview",
                         fill: true,
-                        className: "object-cover"
+                        className: "object-contain"
                     }, void 0, false, {
                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                        lineNumber: 50,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute -bottom-32 left-1/2 -translate-x-1/2 w-[900px] h-[200px] bg-white rounded-t-[120px]"
                     }, void 0, false, {
                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                        lineNumber: 58,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                lineNumber: 49,
+                lineNumber: 53,
                 columnNumber: 7
             }, this)
         ]
