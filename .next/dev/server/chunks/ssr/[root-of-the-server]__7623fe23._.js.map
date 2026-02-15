@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/smt7/krenova/aduanku_web/app/%28landingpage%29/layout.tsx"],"sourcesContent":["export default function LandingPage() {\r\n  return <h1>hai</h1>;\r\n}\r\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBAAO,8OAAC;kBAAG;;;;;;AACb"}},
+    {"offset": {"line": 37, "column": 0}, "map": {"version":3,"sources":["file:///C:/smt7/krenova/aduanku_web/app/page.tsx"],"sourcesContent":["import Image from \"next/image\";\r\nimport LandingPage from \"./(landingpage)/layout\";\r\n\r\nexport default function Home() {\r\n  return (\r\n    <LandingPage/>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;AACA;;;AAEe,SAAS;IACtB,qBACE,8OAAC,4IAAW;;;;;AAEhB"}}]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/smt7/krenova/aduanku_web/app/page.tsx"],"sourcesContent":["import Navbar from '@/components/landingpage/Navbar';\r\nimport HeroSection from '@/components/landingpage/HeroSection';\r\nimport FeaturesSection from '@/components/landingpage/FeaturesSection';\r\nimport StatsSection from '@/components/landingpage/StatsSection';\r\nimport CTASection from '@/components/landingpage/CTASection';\r\nimport GuideSection from '@/components/landingpage/GuideSection';\r\nimport Footer from '@/components/landingpage/Footer';\r\n\r\nexport default function LandingPage() {\r\n  return (\r\n    <main>\r\n      <Navbar />\r\n      <HeroSection />\r\n      <FeaturesSection />\r\n      <StatsSection />\r\n      <CTASection />\r\n      <GuideSection />\r\n      <Footer />\r\n    </main>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAQe,SAAS;IACtB,qBACE,8OAAC;;0BACC,8OAAC;;;;;0BACD,8OAAC;;;;;0BACD,8OAAC;;;;;0BACD,8OAAC;;;;;0BACD,8OAAC;;;;;0BACD,8OAAC;;;;;0BACD,8OAAC;;;;;;;;;;;AAGP"}}]
+}
