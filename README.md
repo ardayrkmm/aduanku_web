@@ -2,6 +2,70 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Aduanku Admin Dashboard Documentation
+Tech Stack
+
+Next.js (App Router)
+
+TypeScript
+
+Tailwind CSS
+
+Recharts
+
+MySQL
+
+Prisma ORM
+
+Setup Project
+
+Clone repo
+
+Install dependencies
+
+npm install
+
+
+Setup environment
+
+DATABASE_URL="mysql://user:password@localhost:3306/aduanku"
+
+
+Run migration
+
+npx prisma migrate dev
+
+
+Run dev server
+
+npm run dev
+
+Folder Convention
+app/(admin)/dashboard
+app/(admin)/complaints
+app/api/
+lib/
+
+Development Rules
+
+Semua query database melalui service layer (lib/*.service.ts)
+
+Jangan query database langsung dari component
+
+Gunakan server component untuk data fetching
+
+Gunakan client component hanya untuk interaktif UI
+
+Adding New Feature
+
+Buat API route
+
+Buat service method
+
+Buat UI component
+
+Dokumentasikan perubahan
+
 First, run the development server:
 
 ```bash
