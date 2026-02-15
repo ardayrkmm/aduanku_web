@@ -165,20 +165,17 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$imag
 ;
 function HeroSection() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "relative min-h-screen flex flex-col items-center text-center px-6 overflow-hidden bg-gradient-to-b from-[#0B1120] via-[#0F1E3A] to-[#0B1120] pt-20 md:pt-24",
+        className: "relative min-h-screen flex flex-col items-center text-center px-6 overflow-hidden pt-20 md:pt-24",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600 opacity-20 rounded-full blur-[150px]"
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                src: "/svg/Desktop.svg",
+                alt: "Hero Background",
+                fill: true,
+                priority: true,
+                className: "object-cover -z-10"
             }, void 0, false, {
                 fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                lineNumber: 11,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-800 opacity-20 rounded-full blur-[150px]"
-            }, void 0, false, {
-                fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                lineNumber: 12,
+                lineNumber: 10,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -190,14 +187,14 @@ function HeroSection() {
                             "Satu Aduanmu",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                 fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                                lineNumber: 19,
+                                lineNumber: 23,
                                 columnNumber: 11
                             }, this),
                             "Merubah Sudut Kota"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                        lineNumber: 17,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -205,7 +202,7 @@ function HeroSection() {
                         children: "Sampaikan aspirasi, keluhan, dan laporan Anda secara cepat, transparan, dan terintegrasi langsung dengan pemerintah Kota Tegal."
                     }, void 0, false, {
                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                        lineNumber: 24,
+                        lineNumber: 28,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -215,7 +212,7 @@ function HeroSection() {
                             children: [
                                 "Lapor Sekarang!",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "w-8 h-8 flex items-center justify-center bg-blue-600 rounded-full",
+                                    className: "w-8 h-8 flex items-center justify-center bg-[#023E8A] rounded-full",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                         className: "w-4 h-4 text-white",
                                         fill: "none",
@@ -228,60 +225,60 @@ function HeroSection() {
                                             d: "M9 5l7 7-7 7"
                                         }, void 0, false, {
                                             fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                                            lineNumber: 41,
+                                            lineNumber: 45,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                                        lineNumber: 34,
+                                        lineNumber: 38,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                                    lineNumber: 33,
+                                    lineNumber: 37,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                            lineNumber: 31,
+                            lineNumber: 35,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                        lineNumber: 30,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                lineNumber: 14,
+                lineNumber: 18,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mt-10 w-100 aspect-square relative",
+                className: "mt-10 w-[400px] aspect-square relative z-10",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         src: "/svg/phone.svg",
                         alt: "Phone Preview",
                         fill: true,
-                        className: "object-cover"
+                        className: "object-contain"
                     }, void 0, false, {
                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                        lineNumber: 50,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute -bottom-32 left-1/2 -translate-x-1/2 w-[900px] h-[200px] bg-white rounded-t-[120px]"
                     }, void 0, false, {
                         fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                        lineNumber: 58,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/landingpage/home/HeroSection.tsx",
-                lineNumber: 49,
+                lineNumber: 53,
                 columnNumber: 7
             }, this)
         ]
@@ -306,24 +303,23 @@ __turbopack_context__.s([
     ()=>FeaturesSection
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 'use client';
+;
 ;
 function FeaturesSection() {
     const features = [
         {
-            title: 'Platform pengaduan masyarakat berbasis website',
-            description: 'yang dilengkapi chatbot 24 jam sebagai sarana utama pelaporan aduan.',
-            icon: '📱'
+            title: 'Platform pengaduan masyarakat berbasis website yang dilengkapi chatbot 24 jam sebagai sarana utama pelaporan aduan.',
+            icon: '/svg/24h.svg'
         },
         {
-            title: 'Aduan yang masuk dikelola oleh pemerintah',
-            description: 'melalui dashboard analitik untuk pemantauan dan penyelesaian data secara terpusat.',
-            icon: '📊'
+            title: 'Aduan yang masuk dikelola oleh pemerintah melalui dashboard analitik untuk pemantauan dan penyelesaian data secara terpusat.',
+            icon: '/svg/data.svg'
         },
         {
-            title: 'Sistem mendukung otomatisasi dan analisis aduan',
-            description: 'guna membantu prioritas kebijakan berbasis data.',
-            icon: '📈'
+            title: 'Sistem mendukung otomatisasi dan analisis aduan guna membantu prioritas kebijakan berbasis data.',
+            icon: '/svg/stats.svg'
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -336,81 +332,66 @@ function FeaturesSection() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl md:text-4xl font-bold text-slate-900 mb-2",
-                                children: "Aduanku – Pengaduan Masyarakat"
+                                className: "text-3xl md:text-4xl font-bold text-slate-900 mb-10",
+                                children: "Aduanku – Pengaduan Masyarakat Digital untuk Kota Cerdas"
                             }, void 0, false, {
                                 fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
                                 lineNumber: 31,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-slate-600 text-lg mb-8",
-                                children: "Digital untuk Kota Cerdas"
-                            }, void 0, false, {
-                                fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                lineNumber: 34,
-                                columnNumber: 13
-                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-6",
                                 children: features.map((feature, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex gap-4",
+                                        className: "flex gap-4 items-start",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "flex-shrink-0",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center shadow-md",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-white text-xl",
-                                                        children: feature.icon
+                                                    className: "w-14 h-14 bg-[#023E8A] rounded-lg flex items-center justify-center shadow-md",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                        src: feature.icon,
+                                                        alt: "feature icon",
+                                                        width: 26,
+                                                        height: 26,
+                                                        className: "object-contain"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                                        lineNumber: 45,
+                                                        lineNumber: 42,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                                    lineNumber: 44,
+                                                    lineNumber: 41,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                                lineNumber: 43,
+                                                lineNumber: 40,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                        className: "text-slate-900 font-semibold mb-2",
-                                                        children: feature.title
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                                        lineNumber: 51,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-slate-600 text-sm",
-                                                        children: feature.description
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                                        lineNumber: 54,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "text-slate-900 font-semibold leading-relaxed",
+                                                    children: feature.title
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
+                                                    lineNumber: 54,
+                                                    columnNumber: 21
+                                                }, this)
+                                            }, void 0, false, {
                                                 fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                                lineNumber: 50,
+                                                lineNumber: 53,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, index, true, {
                                         fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                        lineNumber: 41,
+                                        lineNumber: 37,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                lineNumber: 39,
+                                lineNumber: 35,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -420,45 +401,12 @@ function FeaturesSection() {
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "relative",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-full bg-gradient-to-br from-orange-100 to-orange-50 rounded-3xl overflow-hidden shadow-xl aspect-square flex items-center justify-center",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-center text-gray-400",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                        className: "w-24 h-24 mx-auto mb-2",
-                                        fill: "none",
-                                        stroke: "currentColor",
-                                        viewBox: "0 0 24 24",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                            strokeLinecap: "round",
-                                            strokeLinejoin: "round",
-                                            strokeWidth: 2,
-                                            d: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                            lineNumber: 73,
-                                            columnNumber: 19
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                        lineNumber: 67,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        children: "Feature Image"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                        lineNumber: 80,
-                                        columnNumber: 17
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                                lineNumber: 66,
-                                columnNumber: 15
-                            }, this)
+                        className: "relative w-full h-[500px] rounded-3xl overflow-hidden shadow-xl",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            src: "/svg/about.svg",
+                            alt: "Feature Illustration",
+                            fill: true,
+                            className: "object-cover"
                         }, void 0, false, {
                             fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
                             lineNumber: 65,
@@ -472,17 +420,17 @@ function FeaturesSection() {
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-                lineNumber: 28,
+                lineNumber: 27,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-            lineNumber: 27,
+            lineNumber: 26,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/landingpage/home/FeaturesSection.tsx",
-        lineNumber: 26,
+        lineNumber: 25,
         columnNumber: 5
     }, this);
 }
@@ -561,44 +509,44 @@ function StatsSection() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "mt-12 flex items-center space-x-3",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        className: "px-8 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition",
-                                        children: "Lajur Selanjutnya"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/landingpage/home/StatsSection.tsx",
-                                        lineNumber: 38,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        className: "w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                            className: "w-6 h-6 text-white",
-                                            fill: "none",
-                                            stroke: "currentColor",
-                                            viewBox: "0 0 24 24",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                strokeLinecap: "round",
-                                                strokeLinejoin: "round",
-                                                strokeWidth: 2,
-                                                d: "M9 5l7 7-7 7"
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    className: "flex items-center gap-3 bg-[#023E8A] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-all duration-300",
+                                    children: [
+                                        "Lapor Sekarang!",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "w-8 h-8 flex items-center justify-center bg-white rounded-full",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                className: "w-4 h-4 text-black",
+                                                fill: "none",
+                                                stroke: "currentColor",
+                                                strokeWidth: 3,
+                                                viewBox: "0 0 24 24",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                    strokeLinecap: "round",
+                                                    strokeLinejoin: "round",
+                                                    d: "M9 5l7 7-7 7"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/landingpage/home/StatsSection.tsx",
+                                                    lineNumber: 48,
+                                                    columnNumber: 19
+                                                }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/landingpage/home/StatsSection.tsx",
-                                                lineNumber: 48,
-                                                columnNumber: 19
+                                                lineNumber: 41,
+                                                columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/landingpage/home/StatsSection.tsx",
-                                            lineNumber: 42,
-                                            columnNumber: 17
+                                            lineNumber: 40,
+                                            columnNumber: 15
                                         }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/landingpage/home/StatsSection.tsx",
-                                        lineNumber: 41,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/landingpage/home/StatsSection.tsx",
+                                    lineNumber: 38,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
                                 fileName: "[project]/components/landingpage/home/StatsSection.tsx",
                                 lineNumber: 37,
                                 columnNumber: 13
@@ -616,7 +564,7 @@ function StatsSection() {
                                 children: "Transparansi Data Laporan dan Kinerja Penganganan Aduan Masyarakat"
                             }, void 0, false, {
                                 fileName: "[project]/components/landingpage/home/StatsSection.tsx",
-                                lineNumber: 61,
+                                lineNumber: 58,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -624,13 +572,13 @@ function StatsSection() {
                                 children: "Data berikut memberikan gambaran nyata mengenai laporan masyarakat Kota Tagal, mudah dari jumlah aduan yang masuk, kategori permasalahan terbanyak, hingga tingkat penyelesaian oleh instansi terkait."
                             }, void 0, false, {
                                 fileName: "[project]/components/landingpage/home/StatsSection.tsx",
-                                lineNumber: 64,
+                                lineNumber: 61,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/landingpage/home/StatsSection.tsx",
-                        lineNumber: 60,
+                        lineNumber: 57,
                         columnNumber: 11
                     }, this)
                 ]

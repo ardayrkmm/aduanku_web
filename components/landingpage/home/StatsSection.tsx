@@ -35,24 +35,21 @@ export default function StatsSection() {
 
             {/* CTA Button */}
             <div className="mt-12 flex items-center space-x-3">
-              <button className="px-8 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition">
-                Lajur Selanjutnya
-              </button>
-              <button className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+              <button className="flex items-center gap-3 bg-[#023E8A] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-all duration-300">
+              Lapor Sekarang!
+              <span className="w-8 h-8 flex items-center justify-center bg-white rounded-full">
                 <svg
-                  className="w-6 h-6 text-white"
+                  className="w-4 h-4 text-black"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth={3}
                   viewBox="0 0 24 24"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </span>
+            </button>
+
             </div>
           </div>
 
