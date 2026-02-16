@@ -17,7 +17,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <div className="bg-white py-16 md:py-24 px-4">
+    <div className="bg-white py-12 md:py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Stats */}

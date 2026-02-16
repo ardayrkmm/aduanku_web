@@ -1,61 +1,82 @@
 'use client';
 
+import NextImage from 'next/image';
+
 export default function GuideSection() {
   return (
-    <div className="bg-white py-16 md:py-24 px-4">
+    <section className="bg-white py-12 md:py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left side - Content */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Langkah Mudah Melaporkan Aduan Anda
-            </h2>
-            <p className="text-slate-600 text-base leading-relaxed mb-8">
-              Ikuti panduan berikut untuk melaporkan permasalahan di Kota Tagal secara mudah, cepat, dan terintegrasi dengan sistem layanan publik.
-            </p>
+        <div className="grid md:grid-cols-2 gap-16 items-center">
 
-            {/* CTA Button */}
-            <button className="px-8 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition inline-flex items-center space-x-2">
-              <span>Cek Sekarang</span>
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
+          {/* IMAGE (MOBILE ATAS, DESKTOP KANAN) */}
+          <div className="order-1 md:order-2 flex justify-center md:justify-end mb-4 md:mb-0">
+            <div className="relative w-full max-w-xl md:translate-x-4 rounded-[2rem] overflow-hidden shadow-xl">
+              <NextImage
+                src="/svg/guide.svg"
+                alt="Panduan Pelaporan"
+                width={600}
+                height={600}
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
           </div>
 
-          {/* Right side - Image placeholder */}
-          <div className="flex items-center justify-center">
-            <div className="w-full bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl overflow-hidden shadow-xl aspect-square flex items-center justify-center">
-              <div className="text-center text-gray-400">
+          {/* TEXT CONTENT */}
+          <div className="order-2 md:order-1">
+            <h2
+              className="
+                text-slate-900
+                font-medium
+                text-[28px]
+                md:text-[40px]
+                lg:text-[42px]
+                leading-[1.25]
+                mb-6
+              "
+            >
+              Langkah Mudah Melaporkan
+              <br />
+              Aduan Anda
+            </h2>
+
+            <p
+              className="
+                text-slate-600
+                text-[16px]
+                md:text-[18px]
+                leading-relaxed
+                max-w-xl
+                mb-10
+              "
+            >
+              Ikuti panduan berikut untuk melaporkan permasalahan di Kota Tegal
+              secara mudah, cepat, dan terintegrasi dengan sistem layanan publik.
+            </p>
+
+            {/* CTA BUTTON */}
+            <button className="flex items-center gap-3 bg-[#023E8A] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-[1.03] transition-all duration-300">
+              Cek Sekarang!
+              <span className="w-8 h-8 flex items-center justify-center bg-white rounded-full">
                 <svg
-                  className="w-24 h-24 mx-auto mb-2"
+                  className="w-4 h-4 text-black"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth={3}
                   viewBox="0 0 24 24"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    d="M9 5l7 7-7 7"
                   />
                 </svg>
-                <p>Guide Image</p>
-              </div>
-            </div>
+              </span>
+            </button>
           </div>
+
         </div>
       </div>
-    </div>
+    </section>
   );
 }
