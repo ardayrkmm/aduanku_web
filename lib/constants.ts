@@ -124,10 +124,18 @@ export const SIDEBAR_MENU = [
   {
     section: "Main",
     items: [
-      { label: "Beranda", icon: "Home", href: "/beranda" },
-      { label: "Analitik & Prioritas", icon: "TrendingUp", href: "/analitik" },
-      { label: "Aduan ", icon: "TrendingUp", href: "/aduan" },
-      { label: "Laporan & Rekomendasi", icon: "BarChart3", href: "/laporan" },
+      { label: "Beranda", icon: "Home", href: "/admin/beranda" },
+      {
+        label: "Analitik & Prioritas",
+        icon: "TrendingUp",
+        href: "/admin/analitik",
+      },
+      { label: "Aduan ", icon: "TrendingUp", href: "/admin/aduan" },
+      {
+        label: "Laporan & Rekomendasi",
+        icon: "BarChart3",
+        href: "/admin/laporan",
+      },
     ],
   },
   {

@@ -1,0 +1,28 @@
+[00:00:04.238] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:05.250] Server  LOG     ✓ Ready in 3.7s
+[00:00:05.256] Server  WARN    ⚠ Cross origin request detected from 192.168.18.39 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:09.934] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:25.330] Server  ERROR   (node:19476) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[00:04:20.068] Server  LOG     ✓ Compiled in 1033ms
+[00:04:32.516] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:45.761] Server  ERROR   Token verification error: Error: The edge runtime does not support Node.js 'crypto' module.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+    at verifyToken (lib\auth.ts:41:25)
+    at middleware (middleware.ts:19:32)
+  39 | export function verifyToken(token: string): JWTPayload | null {
+  40 |   try {
+> 41 |     const decoded = jwt.verify(token, JWT_SECRET) as JWTPayload;
+     |                         ^
+  42 |     return decoded;
+  43 |   } catch (error) {
+  44 |     console.error("Token verification error:", error); {
+  
+}
+[00:12:16.930] Server  LOG     ✓ Compiled in 52ms
+[00:12:51.957] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:02.394] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:07.964] Server  LOG     ○ Compiling /admin/analitik ...
+[00:14:18.234] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:00.713] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
