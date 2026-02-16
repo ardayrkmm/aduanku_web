@@ -1,5 +1,7 @@
 import DashboardStatsGrid from "@/components/dashboard/DashboardStatsGrid";
-import ComplaintTrendChart, { MonthlyTrendPoint } from "@/components/dashboard/ComplaintTrendChart";
+import ComplaintTrendChart, {
+  MonthlyTrendPoint,
+} from "@/components/dashboard/ComplaintTrendChart";
 import { headers } from "next/headers";
 import React from "react";
 
@@ -12,12 +14,14 @@ interface DashboardStats {
 
 async function fetchDashboardStats(): Promise<DashboardStats | null> {
   try {
-    const hdrs = headers();
-    const host = (await hdrs).get("host");
+    const hdrs = await headers();
+    const host = hdrs.get("host");
     if (!host) return null;
     const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
     const baseUrl = `${protocol}://${host}`;
-    const res = await fetch(`${baseUrl}/api/dashboard/stats`, { cache: "no-store" });
+    const res = await fetch(`${baseUrl}/api/dashboard/stats`, {
+      cache: "no-store",
+    });
     if (!res.ok) return null;
     const json = await res.json();
     // If API returns the raw object, not { data: ... }

@@ -4,7 +4,8 @@ import { Menu, Search, ChevronDown } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="h-20 bg-white border-b border-gray-200 flex items-center justify-between px-8">
+    <header className="fixed top-0 left-64 right-0 h-20 bg-white border-b border-gray-200 flex items-center justify-between px-8 z-40">
+      {/* Left Side - Hamburger & Search */}
       <div className="flex items-center gap-6 flex-1">
         <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
           <Menu size={24} className="text-gray-700" />

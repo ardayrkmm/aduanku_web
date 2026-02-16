@@ -1,54 +1,132 @@
-import { NextResponse } from "next/server";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import { Admin } from "../../../../models/index";
+import { NextRequest, NextResponse } from "next/server";
+import bcrypt from "bcrypt";
+import { z } from "zod";
+import { connectDB } from "@/lib/mongo";
+import AdminUser from "@/models/AdminUser";
+import { generateToken, getCookieOptions } from "@/lib/auth";
 
-export async function POST(req: Request) {
+// Zod schema for request validation
+const LoginRequestSchema = z.object({
+  email: z.string().email("Email harus valid"),
+  password: z.string().min(1, "Password harus diisi"),
+});
+
+type LoginRequest = z.infer<typeof LoginRequestSchema>;
+
+/**
+ * POST /api/auth/login
+ *
+ * Authenticate admin user with email and password
+ *
+ * Request body:
+ * {
+ *   email: string,
+ *   password: string
+ * }
+ *
+ * Response (200):
+ * {
+ *   success: true,
+ *   message: "Login berhasil"
+ * }
+ *
+ * Response (401):
+ * {
+ *   success: false,
+ *   message: "Email atau password salah"
+ * }
+ *
+ * Response (500):
+ * {
+ *   success: false,
+ *   message: "Terjadi kesalahan server"
+ * }
+ */
+export async function POST(request: NextRequest) {
   try {
-    const body = await req.json();
-    const { username, password } = body || {};
-    if (!username || !password) {
-      return NextResponse.json({ error: "username and password required" }, { status: 400 });
+    // Step 1: Connect to MongoDB
+    await connectDB();
+
+    // Step 2: Parse request body
+    const body = await request.json();
+
+    // Step 3: Validate request with Zod
+    const validationResult = LoginRequestSchema.safeParse(body);
+
+    if (!validationResult.success) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Email atau password salah",
+        },
+        { status: 401 },
+      );
     }
 
-    const admin = await Admin.findOne({ username }).exec();
-    if (!admin) return NextResponse.json({ error: "invalid credentials" }, { status: 401 });
+    const { email, password }: LoginRequest = validationResult.data;
 
-    const isMatch = await bcrypt.compare(password, admin.password);
-    if (!isMatch) return NextResponse.json({ error: "invalid credentials" }, { status: 401 });
+    // Step 4: Find admin user by email
+    const adminUser = await AdminUser.findOne({ email: email.toLowerCase() });
 
-    const payload = { id: admin._id.toString(), username: admin.username };
-    const secret = process.env.JWT_SECRET;
-    const expiresIn = process.env.JWT_EXPIRES_IN || "1d";
-    if (!secret) throw new Error("JWT_SECRET not configured");
+    // Step 5: Check if user exists
+    if (!adminUser) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Email atau password salah",
+        },
+        { status: 401 },
+      );
+    }
 
-    const token = jwt.sign(payload, secret, { expiresIn });
+    // Step 6: Compare password using bcrypt
+    const isPasswordValid = await bcrypt.compare(
+      password,
+      adminUser.passwordHash,
+    );
 
-    const maxAge = (() => {
-      // convert a simple "1d" or numeric seconds to seconds
-      if (/^\d+d$/.test(expiresIn)) {
-        const days = parseInt(expiresIn.replace("d", ""), 10);
-        return days * 24 * 60 * 60;
-      }
-      if (/^\d+$/.test(expiresIn)) return parseInt(expiresIn, 10);
-      // fallback to 1 day
-      return 24 * 60 * 60;
-    })();
+    // Step 7: Check if password is correct
+    if (!isPasswordValid) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Email atau password salah",
+        },
+        { status: 401 },
+      );
+    }
 
-    const res = NextResponse.json({ success: true });
-    res.cookies.set({
-      name: "token",
-      value: token,
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      path: "/",
-      maxAge,
-    });
+    // Step 8: Update lastLoginAt timestamp
+    adminUser.lastLoginAt = new Date();
+    await adminUser.save();
 
-    return res;
-  } catch (err) {
-    console.error("Login error:", err);
-    return NextResponse.json({ error: "internal_server_error" }, { status: 500 });
+    // Step 9: Generate JWT token
+    const token = generateToken(adminUser._id.toString(), adminUser.email);
+    const cookieOptions = getCookieOptions();
+
+    // Step 10: Return success response with HTTP-only cookie
+    const response = NextResponse.json(
+      {
+        success: true,
+        message: "Login berhasil",
+      },
+      { status: 200 },
+    );
+
+    // Set HTTP-only cookie with JWT token
+    response.cookies.set(cookieOptions.name, token, cookieOptions.options);
+
+    return response;
+  } catch (error) {
+    // Step 10: Handle errors
+    console.error("Login error:", error);
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Terjadi kesalahan server",
+      },
+      { status: 500 },
+    );
   }
 }

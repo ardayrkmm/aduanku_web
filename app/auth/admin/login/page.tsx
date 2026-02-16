@@ -2,19 +2,56 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, ArrowUpRight, MessageCircle } from "lucide-react";
+import {
+  Check,
+  ArrowUpRight,
+  MessageCircle,
+  AlertCircle,
+  Loader,
+} from "lucide-react";
 import Image from "next/image";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    router.push("/beranda");
+    setError(null);
+    setLoading(true);
+
+    try {
+      // Call login API
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        // Login failed
+        setError(data.message || "Email atau password salah");
+        return;
+      }
+
+      // Login successful - redirect to dashboard
+      router.push("/admin/beranda");
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("Terjadi kesalahan saat login. Silakan coba lagi.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const passwordRequirements = [
@@ -23,6 +60,8 @@ export default function LoginPage() {
     "Minimal 8 karakter",
     "Gunakan kombinasi angka dan simbol",
   ];
+
+  // Password requirements removed - this is login, not signup
 
   return (
     <div className="min-h-screen flex bg-white p-4 md:p-6">
@@ -64,10 +103,21 @@ export default function LoginPage() {
           {/* Masuk Tab */}
           <button
             type="button"
-            className="w-full bg-[#0A3B7C] text-white rounded-md py-2 text-center font-semibold mb-8 hover:bg-[#082956] transition-colors"
+            disabled
+            className="w-full bg-[#0A3B7C] text-white rounded-md py-2 text-center font-semibold mb-8 opac ity-50 cursor-not-allowed"
           >
             Masuk
           </button>
+
+          {/* Error Message */}
+          {error && (
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-md flex items-start gap-3">
+              <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="text-sm font-medium text-red-700">{error}</p>
+              </div>
+            </div>
+          )}
 
           {/* Login Form */}
           <form onSubmit={handleLogin} className="space-y-6">
@@ -109,30 +159,22 @@ export default function LoginPage() {
               />
             </div>
 
-            {/* Password Requirements */}
-            <div className="space-y-2">
-              {passwordRequirements.map((requirement, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <Check
-                    className="w-4 h-4 text-green-500 flex-shrink-0"
-                    strokeWidth={3}
-                  />
-                  <span className="text-xs text-gray-500">{requirement}</span>
-                </div>
-              ))}
-            </div>
-
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-[#0A3B7C] text-white rounded-full py-3 font-semibold hover:bg-[#082956] transition-colors flex items-center justify-between px-6"
+              disabled={loading}
+              className="w-[80%] mx-auto bg-[#0A3B7C] text-white rounded-full py-3 font-semibold hover:bg-[#082956] transition-colors flex items-center justify-between px-6 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <span>Cek Sekarang</span>
+              <span>{loading ? "Sedang masuk..." : "Masuk"}</span>
               <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                <ArrowUpRight
-                  className="w-3.5 h-3.5 text-[#0A3B7C]"
-                  strokeWidth={3}
-                />
+                {loading ? (
+                  <Loader className="w-3.5 h-3.5 text-[#0A3B7C] animate-spin" />
+                ) : (
+                  <ArrowUpRight
+                    className="w-3.5 h-3.5 text-[#0A3B7C]"
+                    strokeWidth={3}
+                  />
+                )}
               </div>
             </button>
           </form>
