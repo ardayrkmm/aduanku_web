@@ -1,73 +1,139 @@
-import React from "react";
+import React from 'react';
+import StatusBadge from './StatusBadge';
+import PriorityBadge from './PriorityBadge';
 
-type Location = {
+interface Location {
   district?: string;
   village?: string;
-  rw?: string;
-  rt?: string;
-};
+  rw?: number;
+  rt?: number;
+}
 
-type ComplaintDetailCardProps = {
+interface ComplaintDetailCardProps {
   detail: {
-    _id: string;
     ticketNumber: string;
-    reporterName: string;
+    reporterName?: string;
     reporterPhone?: string;
     category?: string;
+    title?: string;
+    description?: string;
     location?: Location;
-    title: string;
-    description: string;
+    address?: string;
+    latitude?: number;
+    longitude?: number;
+    priorityLevel?: string;
     status: string;
-    priorityLevel: string;
-    createdAt: string;
-    resolvedAt?: string;
-    responseMinutes?: number;
-    statusLogs?: any[];
-    attachments?: any[];
   };
-};
+}
 
 export default function ComplaintDetailCard({ detail }: ComplaintDetailCardProps) {
+  const renderLocation = () => {
+    const rtRwParts = [];
+    if (detail.location?.rt) rtRwParts.push(`RT ${detail.location.rt}`);
+    if (detail.location?.rw) rtRwParts.push(`RW ${detail.location.rw}`);
+    const line1 = rtRwParts.join(' / ');
+
+    const villageDistrictParts = [];
+    if (detail.location?.village) villageDistrictParts.push(detail.location.village);
+    if (detail.location?.district) villageDistrictParts.push(detail.location.district);
+    const line2 = villageDistrictParts.join(' - ');
+
+    return (
+      <div className="space-y-1">
+        {line1 && <div className="font-medium text-gray-900">{line1}</div>}
+        {line2 && <div className="text-gray-600">{line2}</div>}
+        {detail.address && (
+          <div className="text-sm text-gray-500 pt-1">{detail.address}</div>
+        )}
+        {(detail.latitude || detail.longitude) && (
+          <div className="text-xs text-gray-400 font-mono mt-1">
+            {detail.latitude}, {detail.longitude}
+          </div>
+        )}
+        {!line1 && !line2 && !detail.address && (
+          <div className="text-gray-400 italic">Location data not available</div>
+        )}
+      </div>
+    );
+  };
+
   return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-        <div>
-          <div className="text-xs text-gray-400">Ticket</div>
-          <div className="font-bold text-lg">{detail.ticketNumber}</div>
+    <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+      <div className="p-6 md:p-8 space-y-8 divide-y divide-gray-100">
+
+        {/* Header: Ticket & Status */}
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+          <div>
+            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">
+              Ticket Number
+            </div>
+            <div className="text-3xl font-bold text-gray-900 tracking-tight">
+              {detail.ticketNumber}
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <StatusBadge status={detail.status} />
+            {detail.priorityLevel && (
+              <PriorityBadge priority={detail.priorityLevel} />
+            )}
+          </div>
         </div>
-        <div className="mt-2 md:mt-0">
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
-            {detail.status}
-          </span>
-          <span className="ml-2 inline-block px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800">
-            {detail.priorityLevel}
-          </span>
+
+        {/* Title, Category & Description */}
+        <div className="pt-8">
+          <div className="mb-6">
+            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+              Issue Details
+            </div>
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">
+              {detail.title || 'Untitled Complaint'}
+            </h2>
+            <div className="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">
+              {detail.category || 'Uncategorized'}
+            </div>
+          </div>
+
+          <div className="bg-gray-50 rounded-lg p-5 border border-gray-100/50">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+              Description
+            </h3>
+            <p className="text-gray-700 whitespace-pre-line leading-relaxed">
+              {detail.description || 'No description provided.'}
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="mb-2">
-        <div className="text-xs text-gray-400">Reporter</div>
-        <div className="font-medium">{detail.reporterName} {detail.reporterPhone && <span className="text-xs text-gray-500">({detail.reporterPhone})</span>}</div>
-      </div>
-      <div className="mb-2">
-        <div className="text-xs text-gray-400">Category</div>
-        <div className="font-medium">{detail.category}</div>
-      </div>
-      <div className="mb-2">
-        <div className="text-xs text-gray-400">Location</div>
-        <div className="text-sm text-gray-700">
-          {detail.location?.district && <span>{detail.location.district}, </span>}
-          {detail.location?.village && <span>{detail.location.village}, </span>}
-          {detail.location?.rw && <span>RW {detail.location.rw}, </span>}
-          {detail.location?.rt && <span>RT {detail.location.rt}</span>}
+
+        {/* Info Grid: Reporter & Location */}
+        <div className="pt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Reporter Column */}
+          <div>
+            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+              Reporter Information
+            </div>
+            <div className="bg-white">
+              <div className="font-medium text-gray-900 text-lg">
+                {detail.reporterName || 'Anonymous'}
+              </div>
+              {detail.reporterPhone ? (
+                <div className="text-gray-500 font-mono text-sm mt-1">
+                  {detail.reporterPhone}
+                </div>
+              ) : (
+                <div className="text-gray-400 text-sm mt-1 italic">
+                  No contact info
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Location Column */}
+          <div>
+            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+              Location Details
+            </div>
+            {renderLocation()}
+          </div>
         </div>
-      </div>
-      <div className="mb-2">
-        <div className="text-xs text-gray-400">Title</div>
-        <div className="font-semibold">{detail.title}</div>
-      </div>
-      <div>
-        <div className="text-xs text-gray-400">Description</div>
-        <div className="text-gray-800 whitespace-pre-line">{detail.description}</div>
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 import mongoose, { FilterQuery } from "mongoose";
 import connectToDatabase from "@/lib/db";
 import { Complaint, Category, IComplaint } from "@/models/index";
+import { PipelineStage } from "mongoose";
+
 
 export interface ComplaintListItem {
   _id: string;
@@ -43,7 +45,7 @@ export async function getComplaintsList(params: {
   if (category && mongoose.Types.ObjectId.isValid(category)) baseFilter.category = new mongoose.Types.ObjectId(category);
   if (search) baseFilter.ticketNumber = { $regex: search, $options: "i" };
 
-  const pipeline = [
+  const pipeline: PipelineStage[] = [
     { $match: baseFilter },
     {
       $lookup: {
