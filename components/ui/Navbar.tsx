@@ -51,7 +51,7 @@ export default function Navbar() {
 
   const items = [
     {
-      label: 'Home',
+      label: 'Beranda',
       bgColor: '#0B1120',
       textColor: '#ffffff',
       links: [

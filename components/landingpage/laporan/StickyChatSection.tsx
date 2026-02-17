@@ -94,7 +94,7 @@ export default function StickyChatSection() {
         )}
 
         {/* CHAT INPUT — STICKY */}
-        <div className="bg-white border border-gray-100 rounded-3xl px-6 py-5 mt-auto relative">
+        <div className="bg-white border border-gray-300 rounded-3xl px-6 py-5 mt-auto relative">
           <div className="absolute top-5 left-6 text-gray-400">
             <Search className="w-5 h-5" />
           </div>

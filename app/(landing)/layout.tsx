@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import Navbar from '@/components/landingpage/home/Navbar';
-import Footer from '@/components/landingpage/home/Footer';
+import Navbar from '@/components/ui/Navbar';
+import Footer from '@/components/ui/Footer';
 
 export const metadata: Metadata = {
   title: 'Aduanku - Platform Laporan Publik',
