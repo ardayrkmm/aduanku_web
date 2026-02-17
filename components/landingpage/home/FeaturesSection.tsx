@@ -22,56 +22,71 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <div className="bg-white py-16 md:py-24 px-4">
+    <section
+  id="FeaturesSection"
+  className="bg-white py-10 md:py-16 px-4 scroll-mt-40"
+>
+
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          
-          {/* Left side */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-10">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+
+          {/* IMAGE — MOBILE ATAS */}
+          <div className="order-1 md:order-2 mb-10 md:mb-0">
+            <div className="relative w-full h-[320px] md:h-[480px] rounded-[2rem] overflow-hidden shadow-xl">
+              <Image
+                src="/svg/About.svg"
+                alt="Feature Illustration"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* TEXT CONTENT */}
+          <div className="order-2 md:order-1">
+            <h2
+              className="
+                text-slate-900
+                font-medium
+                text-[26px]
+                md:text-[38px]
+                lg:text-[42px]
+                leading-[1.25]
+                mb-8
+              "
+            >
               Aduanku – Pengaduan Masyarakat Digital untuk Kota Cerdas
             </h2>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex gap-4 items-start">
                   
                   {/* Icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-14 h-14 bg-[#023E8A] rounded-lg flex items-center justify-center shadow-md">
+                    <div className="w-12 h-12 bg-[#023E8A] rounded-xl flex items-center justify-center shadow-md">
                       <Image
                         src={feature.icon}
                         alt="feature icon"
-                        width={26}
-                        height={26}
+                        width={24}
+                        height={24}
                         className="object-contain"
                       />
                     </div>
                   </div>
 
                   {/* Text */}
-                  <div>
-                    <h3 className="text-slate-900 font-semibold leading-relaxed">
-                      {feature.title}
-                    </h3>
-                  </div>
+                  <p className="text-slate-600 text-[16px] md:text-[18px] leading-relaxed">
+                    {feature.title}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right side Image */}
-          <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-xl">
-            <Image
-              src="/svg/about.svg"
-              alt="Feature Illustration"
-              fill
-              className="object-cover"
-            />
-          </div>
-
         </div>
       </div>
-    </div>
+    </section>
   );
 }

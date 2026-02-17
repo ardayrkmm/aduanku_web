@@ -2,60 +2,106 @@
 
 export default function CTASection() {
   return (
-    <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-slate-800 py-16 md:py-24 px-4 rounded-3xl my-16">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left side - Content */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Pantau Status Laporan Pengaduanmu
-            </h2>
-            <p className="text-blue-100 text-base leading-relaxed mb-8">
-              Kami memberikan setiap warga hak untuk mengetahui update status laporan Anda dan ikuti setiap tahap prosesnya secara transparan.
-            </p>
+    <section className="px-4 sm:px-6 md:px-10 lg:px-8">
+      <div
+        className="
+          relative
+          my-8 md:my-16
+          rounded-[2rem]
+          overflow-hidden
+          max-w-8xl
+          mx-auto
+        "
+      >
+        {/* BACKGROUND SVG */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/svg/cta.svg')" }}
+        />
 
-            {/* CTA Button */}
-            <button className="px-8 py-3 bg-white text-blue-600 font-medium rounded-full hover:bg-gray-100 transition inline-flex items-center space-x-2">
-              <span>Cek Sekarang</span>
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/10" />
 
-          {/* Right side placeholder - can be replaced with image */}
-          <div className="hidden md:flex items-center justify-center">
-            <div className="w-full h-96 bg-white/10 rounded-3xl backdrop-blur-sm flex items-center justify-center">
-              <div className="text-center text-white/50">
-                <svg
-                  className="w-24 h-24 mx-auto mb-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+        {/* CONTENT */}
+        <div className="relative z-10 py-14 md:py-20">
+          <div className="px-6 md:px-12">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              
+              {/* LEFT SIDE */}
+              <div>
+                <h2
+                  className="
+                    text-white
+                    font-medium
+                    text-[28px]
+                    md:text-[40px]
+                    lg:text-[48px]
+                    leading-[1.2]
+                    mb-4
+                  "
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 3v1m6.364 1.636l-.707-.707M21 12h-1m1.364 6.364l-.707-.707M12 21v1m-6.364-1.636l.707-.707M3 12h1M3.636 5.636l.707-.707"
-                  />
-                </svg>
-                <p>Status Tracking Image</p>
+                  Pantau Status
+                  <br />
+                  Laporan Pengaduanmu
+                </h2>
+
+                <p
+                  className="
+                    text-white/90
+                    font-normal
+                    text-[16px]
+                    md:text-[18px]
+                    lg:text-[20px]
+                    leading-relaxed
+                    max-w-2xl
+                    mb-8
+                  "
+                >
+                  Kami memastikan setiap laporan warga tidak diabaikan.
+                  Cek status laporan Anda dan ikuti setiap tahap prosesnya
+                  secara transparan.
+                </p>
+
+                {/* CTA BUTTON */}
+                <button
+                  className="
+                    flex items-center gap-3
+                    bg-white text-slate-900
+                    font-semibold
+                    px-6 py-3
+                    rounded-full
+                    shadow-lg
+                    hover:scale-[1.03]
+                    transition-all
+                    duration-300
+                  "
+                >
+                  <span>Cek Sekarang</span>
+
+                  <span className="w-8 h-8 flex items-center justify-center bg-[#023E8A] rounded-full">
+                    <svg
+                      className="w-4 h-4 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={3}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
+
+              {/* RIGHT SIDE (kosong / future image) */}
+              
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
