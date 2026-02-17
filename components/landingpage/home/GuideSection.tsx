@@ -4,7 +4,8 @@ import NextImage from 'next/image';
 
 export default function GuideSection() {
   return (
-    <section className="bg-white py-12 md:py-16 px-4">
+    <section id="GuideSection"
+  className="bg-white py-10 md:py-16 px-4 scroll-mt-40">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
 

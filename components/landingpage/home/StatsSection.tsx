@@ -1,31 +1,66 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+import { motion, useMotionValue, animate, useInView } from 'framer-motion';
+
+type StatItemProps = {
+  value: number;
+  label: string;
+};
+
+function StatItem({ value, label }: StatItemProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
+
+  const count = useMotionValue(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const controls = animate(count, value, {
+      duration: 1.5,
+      ease: 'easeOut',
+      onUpdate(latest) {
+        if (ref.current) {
+          ref.current.textContent = Math.floor(latest).toString();
+        }
+      },
+    });
+
+    return () => controls.stop();
+  }, [isInView, value, count]);
+
+  return (
+    <div className="text-center sm:text-left">
+      <div
+        ref={ref}
+        className="text-[32px] md:text-[44px] font-semibold text-slate-900 mb-1"
+      >
+        0
+      </div>
+      <p className="text-slate-500 text-[14px] md:text-[15px]">
+        {label}
+      </p>
+    </div>
+  );
+}
+
 export default function StatsSection() {
   const stats = [
-    {
-      number: '20',
-      label: 'Aduan Masuk',
-    },
-    {
-      number: '20',
-      label: 'Aduan Diproses',
-    },
-    {
-      number: '20',
-      label: 'Aduan Terselesaikan',
-    },
+    { value: 20, label: 'Aduan Masuk' },
+    { value: 20, label: 'Aduan Diproses' },
+    { value: 20, label: 'Aduan Terselesaikan' },
   ];
 
   return (
     <section
-  id="StatsSection"
-  className="bg-white py-10 md:py-16 px-4 scroll-mt-40"
->
-
+      id="StatsSection"
+      className="bg-white py-10 md:py-16 px-4 scroll-mt-40"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
-          {/* RIGHT CONTENT (MOBILE ATAS) */}
+          {/* RIGHT CONTENT */}
           <div className="order-1 md:order-2">
             <h2
               className="
@@ -60,25 +95,25 @@ export default function StatsSection() {
             </p>
           </div>
 
-          {/* LEFT CONTENT (STATS + BUTTON) */}
+          {/* LEFT CONTENT */}
           <div className="order-2 md:order-1">
-            
+
             {/* STATS */}
             <div className="flex justify-between sm:justify-start sm:space-x-16 mb-10">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center sm:text-left">
-                  <div className="text-[32px] md:text-[44px] font-semibold text-slate-900 mb-1">
-                    {stat.number}
-                  </div>
-                  <p className="text-slate-500 text-[14px] md:text-[15px]">
-                    {stat.label}
-                  </p>
-                </div>
+                <StatItem
+                  key={index}
+                  value={stat.value}
+                  label={stat.label}
+                />
               ))}
             </div>
 
-            {/* CTA BUTTON */}
-            <button className="flex items-center gap-3 bg-[#023E8A] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-[1.03] transition-all duration-300">
+            {/* CTA */}
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              className="flex items-center gap-3 bg-[#023E8A] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300"
+            >
               Lapor Sekarang!
               <span className="w-8 h-8 flex items-center justify-center bg-white rounded-full">
                 <svg
@@ -88,17 +123,12 @@ export default function StatsSection() {
                   strokeWidth={3}
                   viewBox="0 0 24 24"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 5l7 7-7 7"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </span>
-            </button>
+            </motion.button>
 
           </div>
-
         </div>
       </div>
     </section>
