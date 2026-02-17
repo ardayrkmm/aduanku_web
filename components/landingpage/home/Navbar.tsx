@@ -2,8 +2,18 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
+
+const MENUS = [
+  { label: 'Beranda', href: '/' },
+  { label: 'Laporan', href: '/laporan' },
+  { label: 'Cek Status', href: '/#'},
+  { label: 'Panduan', href: '/#'},
+];
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   const [hidden, setHidden] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,7 +28,7 @@ export default function Navbar() {
 
       if (currentY > lastScrollY.current && currentY > 80) {
         setHidden(true);
-        setMenuOpen(false); // auto close menu saat scroll
+        setMenuOpen(false);
       } else {
         setHidden(false);
       }
@@ -57,12 +67,14 @@ export default function Navbar() {
 
   const isLight = theme === 'light';
 
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname.startsWith(href);
+
   return (
     <nav
       className={`
         fixed top-0 left-0 w-full z-50
-        backdrop-blur-md
-        transition-all duration-300
+        backdrop-blur-md transition-all duration-300
         ${hidden ? '-translate-y-full' : 'translate-y-0'}
       `}
       style={{
@@ -75,12 +87,11 @@ export default function Navbar() {
         <div className="relative flex items-center justify-between h-16">
 
           {/* LOGO */}
-          <div className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <div
-              className={`
-                w-8 h-8 rounded flex items-center justify-center
-                ${isLight ? 'bg-white/90' : 'bg-[#023E8A]'}
-              `}
+              className={`w-8 h-8 rounded flex items-center justify-center ${
+                isLight ? 'bg-white/90' : 'bg-[#023E8A]'
+              }`}
             >
               <span
                 className={`font-semibold text-sm ${
@@ -90,7 +101,6 @@ export default function Navbar() {
                 A
               </span>
             </div>
-
             <span
               className={`font-semibold text-lg ${
                 isLight ? 'text-white' : 'text-slate-900'
@@ -98,50 +108,53 @@ export default function Navbar() {
             >
               Aduanku
             </span>
-          </div>
+          </Link>
 
           {/* MENU DESKTOP */}
           <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex space-x-10">
-            {['Beranda', 'Laporan', 'Cek Status', 'Panduan'].map((item) => (
-              <Link
-                key={item}
-                href="#"
-                className={`
-                  font-medium transition
-                  ${
-                    isLight
-                      ? 'text-white/80 hover:text-white'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }
-                `}
-              >
-                {item}
-              </Link>
-            ))}
+            {MENUS.map((item) => {
+              const active = isActive(item.href);
+
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`
+                    font-medium transition flex items-center gap-2
+                    ${
+                      isLight
+                        ? 'text-white/80 hover:text-white'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }
+                  `}
+                >
+                  {item.label}
+                  {active && (
+                    <span
+                      className={`w-1.5 h-1.5 rounded-full ${
+                        isLight ? 'bg-white' : 'bg-[#023E8A]'
+                      }`}
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* HAMBURGER (MOBILE) */}
+          {/* HAMBURGER */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden focus:outline-none"
-            aria-label="Toggle menu"
+            className="md:hidden"
           >
             <div className="space-y-1.5">
-              <span
-                className={`block h-0.5 w-6 transition ${
-                  isLight ? 'bg-white' : 'bg-slate-900'
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-6 transition ${
-                  isLight ? 'bg-white' : 'bg-slate-900'
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-6 transition ${
-                  isLight ? 'bg-white' : 'bg-slate-900'
-                }`}
-              />
+              {[...Array(3)].map((_, i) => (
+                <span
+                  key={i}
+                  className={`block h-0.5 w-6 ${
+                    isLight ? 'bg-white' : 'bg-slate-900'
+                  }`}
+                />
+              ))}
             </div>
           </button>
         </div>
@@ -149,12 +162,9 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       <div
-        className={`
-          md:hidden
-          overflow-hidden
-          transition-all duration-300
-          ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
-        `}
+        className={`md:hidden transition-all duration-300 ${
+          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
         style={{
           backgroundColor: isLight
             ? 'rgba(0,0,0,0.45)'
@@ -162,21 +172,18 @@ export default function Navbar() {
         }}
       >
         <div className="px-6 py-6 space-y-4">
-          {['Beranda', 'Laporan', 'Cek Status', 'Panduan'].map((item) => (
+          {MENUS.map((item) => (
             <Link
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               onClick={() => setMenuOpen(false)}
-              className={`
-                block font-medium
-                ${
-                  isLight
-                    ? 'text-white/90 hover:text-white'
-                    : 'text-slate-700 hover:text-slate-900'
-                }
-              `}
+              className={`block font-medium ${
+                isLight
+                  ? 'text-white/90 hover:text-white'
+                  : 'text-slate-700 hover:text-slate-900'
+              }`}
             >
-              {item}
+              {item.label}
             </Link>
           ))}
         </div>
