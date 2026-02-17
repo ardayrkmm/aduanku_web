@@ -1,23 +1,33 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import CardNav from './CardNav';
 
-const MENUS = [
-  { label: 'Beranda', href: '/' },
-  { label: 'Laporan', href: '/laporan' },
-  { label: 'Cek Status', href: '/#'},
-  { label: 'Panduan', href: '/#'},
-];
+
+const logo = '/svg/logodark.svg';
 
 export default function Navbar() {
-  const pathname = usePathname();
-
   const [hidden, setHidden] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [menuOpen, setMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
+
+  const navbarRef = useRef<HTMLDivElement | null>(null);
+  const [hideOffset, setHideOffset] = useState(0);
+
+  /* ===============================
+     HITUNG TINGGI NAVBAR ASLI
+     =============================== */
+  useEffect(() => {
+    if (!navbarRef.current) return;
+
+    const updateHeight = () => {
+      const rect = navbarRef.current!.getBoundingClientRect();
+      setHideOffset(rect.height + 24); // 24px buffer aman
+    };
+
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
 
   /* ===============================
      HIDE / SHOW ON SCROLL
@@ -27,167 +37,67 @@ export default function Navbar() {
       const currentY = window.scrollY;
 
       if (currentY > lastScrollY.current && currentY > 80) {
-        setHidden(true);
-        setMenuOpen(false);
+        setHidden(true);   // scroll ke bawah → hide
       } else {
-        setHidden(false);
+        setHidden(false);  // scroll ke atas → show
       }
 
       lastScrollY.current = currentY;
     };
 
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  /* ===============================
-     SECTION COLOR DETECTION
-     =============================== */
-  useEffect(() => {
-    const sections = document.querySelectorAll<HTMLElement>('[data-navbar]');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const value = (entry.target as HTMLElement).dataset.navbar as 'light' | 'dark';
-            setTheme(value);
-          }
-        });
-      },
-      {
-        rootMargin: '-80px 0px 0px 0px',
-        threshold: 0.6,
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
-  const isLight = theme === 'light';
-
-  const isActive = (href: string) =>
-    href === '/' ? pathname === '/' : pathname.startsWith(href);
+  const items = [
+    {
+      label: 'Home',
+      bgColor: '#0B1120',
+      textColor: '#ffffff',
+      links: [
+        { label: 'Tentang Kami', href: '/#FeaturesSection', ariaLabel: 'Tentang Kami' },
+        { label: 'Statistik', href: '/#StatsSection', ariaLabel: 'Statistik' },
+        { label: 'Lainnya', href: '/#GuideSection', ariaLabel: 'Lainnya' },
+      ],
+    },
+    {
+      label: 'Pengaduan',
+      bgColor: '#0B1120',
+      textColor: '#ffffff',
+      links: [
+        { label: 'Laporan', href: '/laporan', ariaLabel: 'Form Laporan Pengaduan' },
+        { label: 'Cek Status', href: '/cekstatus', ariaLabel: 'Cek Status' },
+      ],
+    },
+    {
+      label: 'Lainnya',
+      bgColor: '#0B1120',
+      textColor: '#ffffff',
+      links: [
+        { label: 'Panduan', href: '/panduan', ariaLabel: 'Panduan Penggunaan' },
+        { label: 'Kontak Kami', href: '/kontak', ariaLabel: 'Kontak Kami' },
+      ],
+    },
+  ];
 
   return (
-    <nav
-      className={`
-        fixed top-0 left-0 w-full z-50
-        backdrop-blur-md transition-all duration-300
-        ${hidden ? '-translate-y-full' : 'translate-y-0'}
-      `}
+    <div
+      ref={navbarRef}
+      className="fixed top-[1.5rem] left-0 w-full z-50 transition-transform duration-300 ease-in-out"
       style={{
-        backgroundColor: isLight
-          ? 'rgba(0,0,0,0.35)'
-          : 'rgba(255,255,255,0.75)',
+        transform: hidden
+          ? `translateY(-${hideOffset}px)`
+          : 'translateY(0)',
       }}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="relative flex items-center justify-between h-16">
-
-          {/* LOGO */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div
-              className={`w-8 h-8 rounded flex items-center justify-center ${
-                isLight ? 'bg-white/90' : 'bg-[#023E8A]'
-              }`}
-            >
-              <span
-                className={`font-semibold text-sm ${
-                  isLight ? 'text-slate-900' : 'text-white'
-                }`}
-              >
-                A
-              </span>
-            </div>
-            <span
-              className={`font-semibold text-lg ${
-                isLight ? 'text-white' : 'text-slate-900'
-              }`}
-            >
-              Aduanku
-            </span>
-          </Link>
-
-          {/* MENU DESKTOP */}
-          <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex space-x-10">
-            {MENUS.map((item) => {
-              const active = isActive(item.href);
-
-              return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className={`
-                    font-medium transition flex items-center gap-2
-                    ${
-                      isLight
-                        ? 'text-white/80 hover:text-white'
-                        : 'text-slate-600 hover:text-slate-900'
-                    }
-                  `}
-                >
-                  {item.label}
-                  {active && (
-                    <span
-                      className={`w-1.5 h-1.5 rounded-full ${
-                        isLight ? 'bg-white' : 'bg-[#023E8A]'
-                      }`}
-                    />
-                  )}
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* HAMBURGER */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden"
-          >
-            <div className="space-y-1.5">
-              {[...Array(3)].map((_, i) => (
-                <span
-                  key={i}
-                  className={`block h-0.5 w-6 ${
-                    isLight ? 'bg-white' : 'bg-slate-900'
-                  }`}
-                />
-              ))}
-            </div>
-          </button>
-        </div>
-      </div>
-
-      {/* MOBILE MENU */}
-      <div
-        className={`md:hidden transition-all duration-300 ${
-          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-        style={{
-          backgroundColor: isLight
-            ? 'rgba(0,0,0,0.45)'
-            : 'rgba(255,255,255,0.95)',
-        }}
-      >
-        <div className="px-6 py-6 space-y-4">
-          {MENUS.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              className={`block font-medium ${
-                isLight
-                  ? 'text-white/90 hover:text-white'
-                  : 'text-slate-700 hover:text-slate-900'
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </nav>
+      <CardNav
+        logo={logo}
+        logoAlt="Aduanku Logo"
+        items={items}
+        baseColor="#ffffff"
+        menuColor="#000000"
+        ease="power3.out"
+      />
+    </div>
   );
 }
