@@ -1,65 +1,103 @@
 'use client';
 
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import CardNav from './CardNav';
+
+
+const logo = '/svg/logodark.svg';
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
+  const navbarRef = useRef<HTMLDivElement | null>(null);
+  const [hideOffset, setHideOffset] = useState(0);
+
+  /* ===============================
+     HITUNG TINGGI NAVBAR ASLI
+     =============================== */
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Navbar hilang saat scroll down, muncul saat scroll up
-      if (currentScrollY > lastScrollY) {
-        // Scroll down - navbar hilang
-        setIsVisible(false);
-      } else {
-        // Scroll up - navbar muncul
-        setIsVisible(true);
-      }
-      
-      setLastScrollY(currentScrollY);
+    if (!navbarRef.current) return;
+
+    const updateHeight = () => {
+      const rect = navbarRef.current!.getBoundingClientRect();
+      setHideOffset(rect.height + 24); // 24px buffer aman
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
+  /* ===============================
+     HIDE / SHOW ON SCROLL
+     =============================== */
+  useEffect(() => {
+    const onScroll = () => {
+      const currentY = window.scrollY;
+
+      if (currentY > lastScrollY.current && currentY > 80) {
+        setHidden(true);   // scroll ke bawah → hide
+      } else {
+        setHidden(false);  // scroll ke atas → show
+      }
+
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const items = [
+    {
+      label: 'Home',
+      bgColor: '#0B1120',
+      textColor: '#ffffff',
+      links: [
+        { label: 'Tentang Kami', href: '/#FeaturesSection', ariaLabel: 'Tentang Kami' },
+        { label: 'Statistik', href: '/#StatsSection', ariaLabel: 'Statistik' },
+        { label: 'Lainnya', href: '/#GuideSection', ariaLabel: 'Lainnya' },
+      ],
+    },
+    {
+      label: 'Pengaduan',
+      bgColor: '#0B1120',
+      textColor: '#ffffff',
+      links: [
+        { label: 'Laporan', href: '/laporan', ariaLabel: 'Form Laporan Pengaduan' },
+        { label: 'Cek Status', href: '/cekstatus', ariaLabel: 'Cek Status' },
+      ],
+    },
+    {
+      label: 'Lainnya',
+      bgColor: '#0B1120',
+      textColor: '#ffffff',
+      links: [
+        { label: 'Panduan', href: '/panduan', ariaLabel: 'Panduan Penggunaan' },
+        { label: 'Kontak Kami', href: '/kontak', ariaLabel: 'Kontak Kami' },
+      ],
+    },
+  ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-[#0B1120] via-[#0B1120] to-transparent transition-transform duration-300 ${
-      isVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="relative flex items-center h-20">
-          
-          {/* Logo - kiri */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-              <span className="text-slate-900 font-bold text-sm">A</span>
-            </div>
-            <span className="text-white font-bold text-lg">Aduanku.</span>
-          </div>
-
-          {/* Menu - tengah */}
-          <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex space-x-10">
-            <Link href="#" className="text-gray-300 hover:text-white transition">
-              Beranda
-            </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition">
-              Laporan
-            </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition">
-              Cek Status
-            </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition">
-              Panduan
-            </Link>
-          </div>
-
-        </div>
-      </div>
-    </nav>
+    <div
+      ref={navbarRef}
+      className="fixed top-[1.5rem] left-0 w-full z-50 transition-transform duration-300 ease-in-out"
+      style={{
+        transform: hidden
+          ? `translateY(-${hideOffset}px)`
+          : 'translateY(0)',
+      }}
+    >
+      <CardNav
+        logo={logo}
+        logoAlt="Aduanku Logo"
+        items={items}
+        baseColor="#ffffff"
+        menuColor="#000000"
+        ease="power3.out"
+      />
+    </div>
   );
 }
