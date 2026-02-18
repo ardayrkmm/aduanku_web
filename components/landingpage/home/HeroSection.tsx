@@ -108,7 +108,7 @@ export default function HeroSection() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top top',
-          end: '+=800',
+          end: '+=1000',
           scrub: true,
           pin: true,
           anticipatePin: 1,
@@ -201,16 +201,21 @@ export default function HeroSection() {
       {/* Phone Section */}
       <div
         ref={phoneRef}
-        className="mt-10 w-[400px] aspect-square relative z-10"
+        className="mt-25
+    w-[400px]
+    aspect-square
+    relative
+    z-10
+    scale-125"
       >
         <Image
-          src="/svg/phone.svg"
+          src="/svg/hp.svg"
           alt="Phone Preview"
           fill
           className="object-contain"
         />
 
-        <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[900px] h-[200px] bg-white rounded-t-[120px]" />
+        <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[700px] h-[200px] bg-white rounded-t-[80px]" />
       </div>
     </section>
   );
